@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register &#9474; New User
+{% endblock %}
+
+{% block body %}
+<body class="bg-nav">
+  <nav class="nav-bar">
+    <a href="#" class="navbar-brand text-light">Peep This</a>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="text-light display-4" style="font-size:30px; margin-top:100px">Enter your information to join the community!</h1>
+      </div>
+      <div class="col-md-4" style="margin-top:100px">
+        <div class="card">
+          <div class="card-body">
+            <form class="form" method="post" action="/new_user">
+              <label>Name</label><br>
+              <input type="text" class="form-control" name="uname"><br>
+              <label>Email</label><br>
+              <input type="email" class="form-control" name="uemail"><br>
+              <label>Password</label><br>
+              <input type="password" class="form-control" name="upassword"><br><br>
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="signup">
+            </form>
+            <p style="margin-top:3px">Already joined? <a href="/">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

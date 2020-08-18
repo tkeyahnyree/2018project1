@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome &#9474; Login
+{% endblock %}
+
+{% block body %}
+<body class="bg-nav">
+  <nav class="nav-bar">
+    <a href="#" class="navbar-brand text-light">Peep This</a>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="text-light display-4" style="font-size:50px; margin-top:100px">Share your thoughts on your favorite reads</h1>
+      </div>
+      <div class="col-md-4" style="margin-top:100px">
+        <div class="card">
+          <div class="card-body">
+            <div class="logo-box">
+              <img src="{{ url_for('static', filename='img/welcome.png') }}" class="logo-img" alt="welcome">
+            </div>
+            <form class="form" method="post" action="/login_validation">
+              <div class="crdtls">
+                <label>Email</label><br>
+                <input type="email" required class="form-control input_user" name="email" value="{% if 'email' in request.cookies %} {{ request.cookies.get('email')}} {% endif %}" placeholder="email"><br>
+                <label>Password</label><br>
+                <input type="password" class="form-control" name="password"><br><br>
+                <input type="submit" class="btn btn-primary btn-block btn-lg" value="login">
+              </div>
+              <div class="rmbr">
+
+              </div>
+            </form>
+              <p style="margin-top:3px">Not a member? <a href="/register">Register here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}
